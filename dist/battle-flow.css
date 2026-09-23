@@ -1,0 +1,33 @@
+.enemy-deck{top:26px;bottom:auto;right:24px;transform:rotate(180deg)}
+.enemy-hand .card-back{flex-shrink:0;margin-left:var(--back-overlap,-42px)}
+.opening-overlay{z-index:90;background:#070907ba;padding:24px;overflow-y:auto}
+.opening-dialog{width:min(1180px,100%);text-align:center;color:#ece9dc;font-family:var(--body,system-ui)}
+.opening-dialog h2{font-family:var(--print,serif);font-size:clamp(26px,4vw,48px);margin:0 0 8px;letter-spacing:.12em}
+.opening-dialog p{color:#c3c3b6;font-size:14px;margin:0 0 24px}
+.opening-cards{display:flex;justify-content:center;gap:clamp(6px,1.4vw,20px);margin:0 auto 32px}
+.opening-choice{position:relative;flex:1;max-width:210px;min-width:0;padding:0;border:1px solid #afa995;background:#252923;aspect-ratio:9/13;box-shadow:0 12px 32px #0009;cursor:pointer;transition:transform .15s,border-color .15s}
+.opening-choice .opening-face{position:absolute;inset:0}
+.opening-choice:hover,.opening-choice:focus-visible{transform:translateY(-6px);outline:2px solid #e5d9b8;outline-offset:3px}
+.opening-choice[aria-pressed="true"]{border-color:#da7755;transform:translateY(-9px)}
+.opening-choice[aria-pressed="true"] .opening-face{filter:brightness(.53)}
+.opening-choice .opening-status{position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);padding:6px 12px;background:#33392e;border:1px solid #aba992;color:#eee9d6;white-space:nowrap;font:600 clamp(10px,1.2vw,14px)/1.2 var(--body,system-ui)}
+.opening-choice[aria-pressed="true"] .opening-status{background:#612f20;border-color:#d68564}
+#confirmOpeningBtn,.battle-result button{padding:13px 32px;background:#e6e3d7;color:#21251e;border:1px solid #fffae5;font:600 16px/1.3 var(--body,system-ui);cursor:pointer;letter-spacing:.07em}
+#confirmOpeningBtn:disabled{opacity:.5;cursor:wait}
+.opening-hand{visibility:hidden}
+.opening-dialog[aria-busy="true"] .opening-choice{pointer-events:none}
+.fx-draw{z-index:6;will-change:transform,opacity}
+.order-source{filter:brightness(1.18)!important;outline:2px solid #e4ca70!important}
+.card-tooltip.action-preview{pointer-events:none}
+.result-overlay{background:#0406048c}
+.result-faction{position:absolute;top:max(60px,calc(env(safe-area-inset-top) + 54px));right:max(12px,env(safe-area-inset-right));padding:11px 18px;background:#e6e3d7;color:#21251e;border:1px solid #fffae5;box-shadow:0 4px 20px #0008;font:600 15px/1.3 var(--body,system-ui);cursor:pointer}
+.result-faction:hover,.result-faction:focus-visible{background:#fff9e8;outline:2px solid #d2c7a4;outline-offset:3px}
+.battle-result{text-align:center;color:#f0e9d5;transform:translateY(-2vh)}
+.battle-result h2{margin:0 0 30px;font:700 clamp(66px,11vw,150px)/1.1 var(--print,serif);letter-spacing:.14em;text-indent:.14em;text-shadow:0 3px 30px #000,0 0 60px #d6c39833}
+.battle-result button{background:#191d17cc;color:#ece8d8;border-color:#a9a58d;min-width:160px}
+.battle-result button:hover{background:#e6e3d7;color:#21251e}
+.hq-card.hq-ruin{background:transparent!important;border-color:transparent!important;box-shadow:none!important;outline:none!important;overflow:visible;cursor:default;pointer-events:none;filter:none!important}
+.hq-ruin::before,.hq-ruin::after{display:none!important}
+.hq-ruin-canvas{position:absolute;left:-65%;top:-75%;width:230%;height:230%;pointer-events:none;max-width:none}
+@media(max-width:600px){.opening-overlay{padding:16px 8px}.opening-cards{gap:5px;margin-bottom:30px}.opening-dialog p{font-size:12px}.opening-choice .opening-status{padding:4px 5px}.opening-dialog h2{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.opening-choice{transition:none}}
